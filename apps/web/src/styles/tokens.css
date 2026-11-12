@@ -1,0 +1,69 @@
+/*
+ * Design tokens. Source palette: #FDE8E9 pink, #1B1F3B navy, #B14AED / #C874D9 violet, #E1BBC9 dusty rose.
+ * Pink + navy carry the identity; violet is an accent only (rings, markers, small highlights).
+ * Violet #B14AED fails AA as small text (and as a text-bearing button fill), so:
+ *   - primary buttons are navy (light) / pink (dark)
+ *   - violet text uses --accent-text, a darker/lighter variant that passes AA
+ * tokens.test.ts verifies the contrast pairs below; keep the pairs in sync when editing.
+ */
+
+:root {
+  color-scheme: light;
+
+  --bg: #fffdfc;
+  --surface: #ffffff;
+  --surface-muted: #f5f3f2;
+  --sidebar: #fde8e9;
+  --border: #ecd9de;
+  --border-strong: #e1bbc9;
+
+  --text: #1b1f3b;
+  --text-muted: #5f5d6e;
+  --text-subtle: #85838d; /* non-essential only: placeholders, disabled */
+
+  --primary: #1b1f3b;
+  --on-primary: #fde8e9;
+
+  --accent: #b14aed;
+  --accent-soft: #c874d9;
+  --accent-text: #8a22c9;
+  --accent-wash: #f6e9fc;
+
+  --success: #2b7a57;
+  --warning: #8f5400;
+  --danger: #b3261e;
+
+  --shadow-card: 0 1px 2px rgb(27 31 59 / 0.05), 0 1px 1px rgb(27 31 59 / 0.03);
+  --shadow-overlay: 0 12px 32px rgb(27 31 59 / 0.18);
+}
+
+.dark {
+  color-scheme: dark;
+
+  /* Deliberately layered navy surfaces, not an inversion of light mode. */
+  --bg: #14172a;
+  --surface: #1b1f3b;
+  --surface-muted: #232850;
+  --sidebar: #10132a;
+  --border: #2c3158;
+  --border-strong: #3d4373;
+
+  --text: #fde8e9;
+  --text-muted: #b1aec4;
+  --text-subtle: #7d7a94;
+
+  --primary: #fde8e9;
+  --on-primary: #1b1f3b;
+
+  --accent: #c874d9;
+  --accent-soft: #b14aed;
+  --accent-text: #dba3ea;
+  --accent-wash: #2d2150;
+
+  --success: #6fcf9f;
+  --warning: #f0b35a;
+  --danger: #ff9a92;
+
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.3);
+  --shadow-overlay: 0 12px 32px rgb(0 0 0 / 0.5);
+}
